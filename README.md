@@ -8,7 +8,7 @@ Research Questions:
 - How does the choice of text representation method affect the performance of machine-learning-based phishing email classification?
 - What types of classification errors occur with the different text representation methods?
 
-Dataset:
+**Dataset:**
 
 The project uses the publicly available Phishing Email Dataset on Kaggle (https://www.kaggle.com/datasets/naserabdullahalam/phishing-email-dataset), which combines email records from several sources, including Enron, Ling, CEAS, Nazario, Nigerian Fraud, and SpamAssassin.
 
@@ -20,3 +20,13 @@ The dataset contains two relevant columns:
 The final experiments used 82,078 records after cleaning. The dataset was divided into 80% training data (65,662 emails) and 20% test data (16,416 emails).
 
 Note: The dataset includes spam as well as phishing-related emails. Consequently, the results should not be interpreted as phishing-only detection performance.
+
+**Running the Notebook:**
+
+The experiments were conducted using Google Colab, with the files stored in Google Drive.
+
+To reproduce the experiments, download project.ipynb from this repository and phishing_email.csv from the Kaggle dataset.
+
+Place both files in the same folder in Google Drive and open the notebook in Google Colab. Make sure the dataset path in the notebook matches the folder location, then run all cells in order.
+
+The notebook contains the complete implementation, including data preprocessing, model training, evaluation, and error analysis.
