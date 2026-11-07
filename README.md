@@ -25,7 +25,7 @@ Note: The dataset includes spam as well as phishing-related emails. Consequently
 
 The experiments were conducted using Google Colab, with the files stored in Google Drive.
 
-To reproduce the experiments, download project.ipynb from this repository and phishing_email.csv from the Kaggle dataset.
+To reproduce the experiments, download projectIMT4210.ipynb from this repository and phishing_email.csv from the Kaggle dataset.
 
 Place both files in the same folder in Google Drive and open the notebook in Google Colab. Make sure the dataset path in the notebook matches the folder location, then run all cells in order.
 
