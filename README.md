@@ -5,8 +5,8 @@ This repository contains the Python implementation and experimental analysis for
 The project investigates how different text representation methods affect machine-learning-based email classification, with particular attention to classification performance and false positives and false negatives.
 
 Research Questions:
-- How does the choice of text representation method affect the performance of machine-learning-based phishing email classification?
-- What types of classification errors occur with the different text representation methods?
+- How does the choice of text representation affect the classification performance of Logistic Regression?
+- How do classification errors differ between the text representation methods?
 
 **Dataset:**
 
