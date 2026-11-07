@@ -1,32 +1,61 @@
-# IMT4210 - Comparing Text Representation Methods for Phishing Email Detection
+# IMT4210 – Comparing Text Representation Methods for Phishing Email Detection
 
-This repository contains the Python implementation and experimental analysis for a computational forensics course (IMT4210) project at NTNU.
+This repository contains the Python notebook and experimental analysis for my IMT4210 Computational Forensics project at NTNU.
 
-The project investigates how different text representation methods affect machine-learning-based email classification, with particular attention to classification performance and false positives and false negatives.
+The project compares three text representation methods for email classification using Logistic Regression:
 
-Research Questions:
-- How does the choice of text representation affect the classification performance of Logistic Regression?
-- How do classification errors differ between the text representation methods?
+- Bag of Words (BoW)
+- TF-IDF with unigrams
+- TF-IDF with unigrams and bigrams
 
-**Dataset:**
+The aim is to examine how the choice of text representation affects classification performance and the types of errors made. The results are also discussed in relation to the potential use of automated email classification in digital forensic investigations.
 
-The project uses the publicly available Phishing Email Dataset on Kaggle (https://www.kaggle.com/datasets/naserabdullahalam/phishing-email-dataset), which combines email records from several sources, including Enron, Ling, CEAS, Nazario, Nigerian Fraud, and SpamAssassin.
+## Research Questions
 
-The dataset contains two relevant columns:
+1. How does the choice of text representation affect the classification performance of Logistic Regression?
+2. How do classification errors differ between the text representation methods?
 
-- text_combined: Email text used for classification.
-- label: Binary class label (0 = legitimate, 1 = spam/phishing).
+## Dataset
 
-The final experiments used 82,078 records after cleaning. The dataset was divided into 80% training data (65,662 emails) and 20% test data (16,416 emails).
+The project uses the publicly available [Phishing Email Dataset on Kaggle](https://www.kaggle.com/datasets/naserabdullahalam/phishing-email-dataset), which combines emails from several sources, including Enron, Ling, CEAS, Nazario, Nigerian Fraud, and SpamAssassin.
 
-Note: The dataset includes spam as well as phishing-related emails. Consequently, the results should not be interpreted as phishing-only detection performance.
+The following columns are used:
 
-**Running the Notebook:**
+- `text_combined`: Email text used for classification.
+- `label`: Binary class label (0 = legitimate, 1 = spam/phishing).
 
-The experiments were conducted using Google Colab, with the files stored in Google Drive.
+After removing exact duplicate emails, the dataset contains 82,078 records. The data is divided into 80% training data (65,662 emails) and 20% test data (16,416 emails), using a stratified split.
 
-To reproduce the experiments, download projectIMT4210.ipynb from this repository and phishing_email.csv from the Kaggle dataset.
+**Note:** The positive class includes both spam and phishing-related emails. The results therefore reflect classification of this combined category, rather than phishing detection alone.
 
-Place both files in the same folder in Google Drive and open the notebook in Google Colab. Make sure the dataset path in the notebook matches the folder location, then run all cells in order.
+## Running the Notebook
 
-The notebook contains the complete implementation, including data preprocessing, model training, evaluation, and error analysis.
+The experiments were conducted in Google Colab using Python and scikit-learn.
+
+To reproduce the experiments:
+
+1. Download `projectIMT4210.ipynb` from this repository.
+2. Download `phishing_email.csv` from the Kaggle dataset linked above.
+3. Open the notebook in Google Colab.
+4. Upload the CSV file to Colab or make it accessible through Google Drive.
+5. Check that the dataset path in the notebook points to the correct file.
+6. Run all cells in order.
+
+The notebook includes dataset inspection, cleaning, model training, evaluation, confusion matrices, and analysis of classification errors.
+
+### Python Libraries
+
+The main libraries used are:
+
+- pandas
+- NumPy
+- scikit-learn
+- Matplotlib
+
+The experiments were conducted using Python 3.13.18 and scikit-learn 1.6.1.
+
+## Results
+
+Bag of Words achieved the highest overall classification performance, with an accuracy of 98.76% and an F1-score of 0.9882. The error analysis also showed that some emails were misclassified by all three models and that error rates varied according to message length and class.
+
+The complete results and discussion are provided in the submitted project report.
